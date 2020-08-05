@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --background-color: #232640;
+  --card-background: rgb(43, 46, 77);
+  --card-shadow: rgba(0, 0, 0, 0.15) 0px 7px 30px;
+  --container-width: 1170px;
+  --border-color: rgb(103, 106, 146);
+  --card-text-color: white;
+  --active-color: rgb(255, 120, 45);
+  --select-background-color: #424242;
+  --select-background-color--hover: rgba(255, 255, 255, 0.1);
+  --button-background-color: #5B25EC;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+button {
+  background-color: unset;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+$hSpacing: 10px;
+$vSpacing: 10px;
+$desktopBreakpoint: 1200px;
+$mobileBreakpoint: 600px;
+$iconSize: 22px;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calc-wrapper {
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.calc {
+  width: 90%;
+  max-width: var(--container-width);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: var(--card-background);
+  box-shadow: var(--card-shadow);
+  color: var(--card-text-color);
+  padding: ($vSpacing * 3) ($hSpacing * 4);
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: ($vSpacing * 2);
+
+    &__type {
+      padding: ($vSpacing) ($hSpacing * 2);
+      color: var(--card-text-color);
+      font-size: 16px;
+
+      &.active {
+        color: var(--active-color);
+        border-bottom: 1px solid var(--active-color);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: ($vSpacing * 3);
+    padding-bottom: $vSpacing;
+    border-bottom: 1px solid var(--border-color);
+
+    &__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      margin-bottom: ($vSpacing * 4);
+    }
+
+    &__separator {
+      padding: 0 ($hSpacing * 2);
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 45%;
+
+      &__image {
+        margin-bottom: $vSpacing;
+      }
+    }
+
+    &__optional {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__option {
+      display: flex;
+      align-items: center;
+      margin-bottom: ($vSpacing * 2);
+      font-size: 16px;
+
+      &:not(:last-child) {
+        margin-right: ($hSpacing * 3);
+      }
+
+      .calc__checkbox {
+        height: fit-content;
+
+        &__face {
+          border: 2px solid rgba(255, 255, 255, 0.7);
+          background-color: unset;
+          border-radius: 2px;
+          width: $iconSize;
+          height: $iconSize;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: background-color 0.2s ease-in-out,
+                      border-color 0.2s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &__icon {
+            opacity: 0;
+            width: ($iconSize * 0.7);
+            height: ($iconSize * 0.7);
+            fill: var(--card-background);
+            transition: opacity 0.2s ease-in-out;
+          }
+        }
+
+        &__input {
+          position: absolute;
+          width: 0;
+          height: 0;
+          visibility: collapse;
+          overflow: hidden;
+          opacity: 0;
+
+          &:checked + .calc__checkbox__face {
+            background-color: var(--active-color);
+            border-color: transparent;
+
+            .calc__checkbox__face__icon {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &__label {
+        display: block;
+        margin: 0 $hSpacing;
+      }
+
+      &__info {
+        width: $iconSize;
+        height: $iconSize;
+        fill: white;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__price {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: ($vSpacing * 2);
+
+      em {
+        color: var(--active-color);
+        font-style: normal;
+      }
+    }
+
+    &__submit {
+      padding: ($vSpacing * 1.5) ($hSpacing * 8);
+      background-color: var(--button-background-color);
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &__input {
+    position: relative;
+    width: 100%;
+    padding: ($vSpacing * 1.5) ($hSpacing * 2);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+
+    &__icon {
+      position: absolute;
+      right: ($hSpacing * 2);
+      top: 50%;
+      transform: translate(50%, -50%);
+      transition: transform 0.45s ease-in-out;
+      width: $iconSize;
+      fill: white;
+    }
+   }
+
+  &__options {
+    width: 100%;
+    position: absolute;
+    overflow-y: hidden;
+    max-height: 0;
+    top: 100%;
+    background-color: var(--select-background-color);
+    border-radius: 4px;
+    transition: 0.2s ease-in-out max-height;
+  }
+
+  &__option {
+    width: 100%;
+    padding: $vSpacing ($hSpacing * 2);
+    transition: 0.1s background-color ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--select-background-color--hover);
+    }
+  }
+
+  &.open {
+    .select__options {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .select__input__icon {
+      transform: translate(50%, -50%) rotateZ(180deg);
+    }
+  }
+}
+
+@media (min-width: $desktopBreakpoint) {
+  .calc__body__column {
+    flex-direction: row;
+    align-items: center;
+
+    &__image {
+      margin-bottom: 0;
+      margin-right: ($hSpacing * 2);
+    }
+  }
+}
+
+@media (max-width: $mobileBreakpoint) {
+  .calc__body{
+    &__main {
+      flex-direction: column;
+    }
+
+    &__optional {
+      flex-wrap: wrap;
+    }
+
+    &__column {
+      width: 100%;
+
+      &:first-child {
+        margin-bottom: ($hSpacing * 4);
+      }
+    }
+
+    &__separator{
+      display: none;
+    }
+  }
+
+}

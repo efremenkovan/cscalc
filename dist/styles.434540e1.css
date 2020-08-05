@@ -1,0 +1,11 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calc-wrapper {
+  background-color: #2f3155;
+}
+
+/*# sourceMappingURL=/styles.434540e1.css.map */

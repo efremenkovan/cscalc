@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/index.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAOF;EACE","file":"styles.434540e1.css","sourceRoot":"../src","sourcesContent":["*, *::before, *::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n:root {\n\n}\n\n.calc-wrapper {\n  background-color: #2f3155;\n}"]}
