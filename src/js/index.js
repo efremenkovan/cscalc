@@ -1,4 +1,8 @@
 import '../styles/index.scss';
 import {Select} from './select.js';
+import Page from './pages.js';
 
-const fromSelect = new Select();
+Page({
+    page: 'mm',
+    parent: '.calc-wrapper',
+});

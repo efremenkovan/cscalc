@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-  --background-color: #232640;
-  --card-background: rgb(43, 46, 77);
-  --card-shadow: rgba(0, 0, 0, 0.15) 0px 7px 30px;
+  --background-color: #1d1d1f;
+  --card-background: #1e1e20;
+  --card-shadow: rgba(0, 0, 0, 0.45) 0px 7px 60px;
   --container-width: 1170px;
   --border-color: rgb(103, 106, 146);
   --card-text-color: white;
@@ -39,9 +39,10 @@ $iconSize: 22px;
 
 .calc-wrapper {
   background-color: var(--background-color);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding: ($vSpacing * 3) 0;
 }
 
 .calc {
@@ -100,6 +101,10 @@ $iconSize: 22px;
       justify-content: flex-start;
       align-items: center;
       width: 45%;
+
+      &:last-child {
+        flex-direction: column-reverse;
+      }
 
       &__image {
         margin-bottom: $vSpacing;
@@ -243,6 +248,7 @@ $iconSize: 22px;
     background-color: var(--select-background-color);
     border-radius: 4px;
     transition: 0.2s ease-in-out max-height;
+    z-index: 10
   }
 
   &__option {
@@ -250,7 +256,7 @@ $iconSize: 22px;
     padding: $vSpacing ($hSpacing * 2);
     transition: 0.1s background-color ease-in-out;
 
-    &:hover {
+    &:hover, &.selected {
       cursor: pointer;
       background-color: var(--select-background-color--hover);
     }
@@ -269,13 +275,28 @@ $iconSize: 22px;
 }
 
 @media (min-width: $desktopBreakpoint) {
-  .calc__body__column {
-    flex-direction: row;
-    align-items: center;
+  .calc__body {
+    &__main {
+      align-items: center;
+    }
 
-    &__image {
-      margin-bottom: 0;
-      margin-right: ($hSpacing * 2);
+    &__column {
+      flex-direction: row;
+      align-items: center;
+
+      &:last-child {
+        flex-direction: row;
+      }
+
+      &__image {
+        margin-bottom: 0;
+        margin-right: ($hSpacing * 2);
+
+        &#image-to {
+          margin-left: ($hSpacing * 2);
+          margin-right: 0;
+        }
+      }
     }
   }
 }
