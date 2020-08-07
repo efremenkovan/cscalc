@@ -245,7 +245,7 @@ function wingmanPage({parent}) {
 
         let total = 0;
         for(let i = parseInt(settings.from.id) + 1; i <= settings.to.id; i++) {
-            total += parseInt(rankOptions[i].value);
+            total += parseInt(wingmanRankOptions[i].value);
         }
 
         settings.options.forEach(param => {
@@ -262,7 +262,7 @@ function wingmanPage({parent}) {
     const fromSelect = {
         options: {
             placeholder: 'Текущее звание',
-            options: rankOptions,
+            options: wingmanRankOptions,
             onChange(value) {
                 rankUp.from = value;
                 updatePrice(rankUp);
@@ -276,7 +276,7 @@ function wingmanPage({parent}) {
         selector: '[id="select-to"]',
         options: {
             placeholder: 'Желаемое звание звание',
-            options: rankOptions,
+            options: wingmanRankOptions,
             onChange(value) {
                 rankUp.to = value;
                 updatePrice(rankUp);

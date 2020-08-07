@@ -891,7 +891,7 @@ function wingmanPage(_ref3) {
     var total = 0;
 
     for (var i = parseInt(settings.from.id) + 1; i <= settings.to.id; i++) {
-      total += parseInt(rankOptions[i].value);
+      total += parseInt(wingmanRankOptions[i].value);
     }
 
     settings.options.forEach(function (param) {
@@ -909,7 +909,7 @@ function wingmanPage(_ref3) {
   var fromSelect = {
     options: {
       placeholder: 'Текущее звание',
-      options: rankOptions,
+      options: wingmanRankOptions,
       onChange: function onChange(value) {
         rankUp.from = value;
         updatePrice(rankUp);
@@ -922,7 +922,7 @@ function wingmanPage(_ref3) {
     selector: '[id="select-to"]',
     options: {
       placeholder: 'Желаемое звание звание',
-      options: rankOptions,
+      options: wingmanRankOptions,
       onChange: function onChange(value) {
         rankUp.to = value;
         updatePrice(rankUp);
@@ -1053,7 +1053,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57900" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61441" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
