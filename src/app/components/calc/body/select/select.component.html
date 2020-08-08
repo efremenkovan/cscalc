@@ -1,0 +1,38 @@
+<div
+  class="select"
+  [class.open]="isOpen"
+  #selectRoot
+>
+  <button
+    class="select__input"
+    (click)="isOpen ? close() : open($event)"
+  >
+    <span>
+      {{(selectedOption && selectedOption.name) || placeholder}}
+    </span>
+    <svg
+      data-select-type="input"
+      class="select__input__icon"
+      focusable="false"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <path d="M7 10l5 5 5-5z"/>
+    </svg>
+  </button>
+  <div class="select__options">
+    <li
+      *ngFor="let option of options"
+      class="select__option"
+      [class.selected]="selectedOption  && (option.id === selectedOption.id)"
+    >
+      <button
+        (click)="selectOption(option)"
+        [disabled]="!isOpen"
+      >
+        {{option.name}}
+      </button>
+    </li>
+  </div>
+</div>

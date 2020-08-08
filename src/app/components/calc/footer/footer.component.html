@@ -1,0 +1,17 @@
+<span
+  class="calc__footer__price"
+  *ngIf="isValid; else invalidBlock"
+>
+  К оплате: <em class="total">{{message}}₽</em>
+</span>
+<ng-template #invalidBlock>
+  <span class="calc__footer__price total">{{message}}</span>
+</ng-template>
+<button
+  class="calc__footer__submit"
+  type="button"
+  (click)="submitHandler()"
+  *ngIf="isValid"
+>
+  Заказать!
+</button>

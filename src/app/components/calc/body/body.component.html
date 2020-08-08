@@ -1,0 +1,40 @@
+ <div class="calc__body__main">
+    <div class="calc__body__column">
+      <img
+        [src]="(fromRank && fromRank.image) || './assets/ranks/default.webp'"
+        [alt]="(fromRank && fromRank.name) || 'Unranked'"
+        class="calc__body__column__image"
+      >
+      <app-select
+        [options]="rankOptions"
+        [selectedOption]="fromRank"
+        [placeholder]="'Нынешнее звание'"
+        (optionChangeEvent)="fromRankChangeHandler($event)"
+      ></app-select>
+    </div>
+    <img
+      src="./assets/separator.svg"
+      alt=">>>"
+      class="calc__body__separator"
+    />
+    <div class="calc__body__column">
+      <app-select
+        [options]="rankOptions"
+        [selectedOption]="toRank"
+        [placeholder]="'Желаемое звание'"
+        (optionChangeEvent)="toRankChangeHandler($event)"
+      ></app-select>
+        <img
+          [src]="(toRank && toRank.image) || './assets/ranks/default.webp'"
+          [alt]="(toRank && toRank.name) || 'Unranked'"
+          class="calc__body__column__image"
+        />
+    </div>
+  </div>
+  <div class="calc__body__optional">
+    <app-optional-service
+      *ngFor="let service of optionalServices"
+      [service]="service"
+      (serviceSelectEvent)="serviceSelectHandler($event)"
+    ></app-optional-service>
+  </div>

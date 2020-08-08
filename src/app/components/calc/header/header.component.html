@@ -1,0 +1,8 @@
+<button
+  *ngFor="let option of options"
+  class="calc__header__type"
+  [class.active]="activeOption === option.value"
+  (click)="selectType(option.value)"
+>
+  {{option.label}}
+</button>

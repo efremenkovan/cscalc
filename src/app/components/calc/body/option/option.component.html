@@ -1,0 +1,30 @@
+<button
+  class="calc__body__option"
+  [class.checked]="service.isChecked"
+  (click)="optionSelectHandler()"
+>
+  <div class="calc__checkbox">
+    <div class="calc__checkbox__face">
+      <svg
+        fill="#000000"
+        viewBox="0 0 30 30"
+        width="30px"
+        height="30px"
+        class="calc__checkbox__face__icon"
+      >
+        <path d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z"/>
+      </svg>
+    </div>
+  </div>
+  <span class="calc__body__option__label">{{service.label}}</span>
+  <svg
+    class="calc__body__option__info"
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    role="presentation"
+    data-title="{{service.description}}"
+  >
+    <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+  </svg>
+</button>

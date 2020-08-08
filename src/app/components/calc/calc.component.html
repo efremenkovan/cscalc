@@ -1,0 +1,20 @@
+ <app-header
+    [options]="headerTabs"
+    [activeOption]="type"
+    (selectTypeEvent)="selectType($event)"
+  ></app-header>
+  <app-body
+    [fromRank]="fromRank"
+    [toRank]="toRank"
+    [rankOptions]="rankOptions"
+    [optionalServices]="optionalServices"
+
+    (fromRankChangeEvent)="changeFromRank($event)"
+    (toRankChangeEvent)="changeToRank($event)"
+    (serviceSelectEvent)="toggleService($event)"
+  ></app-body>
+  <app-footer
+    [message]="footerMessage"
+    [isValid]="isValid"
+    (submitEvent)="submitHandler()"
+  ></app-footer>
