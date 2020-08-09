@@ -1,6 +1,9 @@
 export interface OptionalService {
   id: number;
-  value: (value: number) => number;
+  value: {
+    native: (value: number) => number,
+    faceIt: (value: number) => number
+  };
   label: string;
   description: string;
   isChecked: boolean;

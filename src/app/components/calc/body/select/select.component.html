@@ -5,7 +5,7 @@
 >
   <button
     class="select__input"
-    (click)="isOpen ? close() : open($event)"
+    (click)="isOpen ? close() : open()"
   >
     <span>
       {{(selectedOption && selectedOption.name) || placeholder}}

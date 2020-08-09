@@ -1,6 +1,14 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CalcService } from '../../../../services/calc.service';
 import { Rank } from '../../../../models/Rank';
+import { FaceItRank } from '../../../../models/FaceItRank';
+
+export interface SelectOption {
+  name: string;
+  value: any;
+  id: number;
+}
+
 
 @Component({
   selector: 'app-select',
@@ -8,17 +16,17 @@ import { Rank } from '../../../../models/Rank';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  @Input() options: Rank[] = [];
-  @Input() selectedOption: Rank | null = null;
+  @Input() options: SelectOption[] = [];
+  @Input() selectedOption: SelectOption | null = null;
   @Input() placeholder: string = 'Выберите звание';
 
   @ViewChild('selectRoot') selectRoot: ElementRef;
 
-  @Output() optionChangeEvent: EventEmitter<Rank> = new EventEmitter<Rank>();
+  @Output() optionChangeEvent: EventEmitter<SelectOption> = new EventEmitter<SelectOption>();
 
   public isOpen: boolean = false;
 
-  public open(event: MouseEvent): void {
+  public open(): void {
     this.isOpen = true;
     this.clickHandler = this.clickHandler.bind(this);
     this.keyDownHandler = this.keyDownHandler.bind(this);
@@ -32,7 +40,7 @@ export class SelectComponent {
     document.removeEventListener('keydown', this.keyDownHandler);
   }
 
-  public selectOption(option: Rank): void {
+  public selectOption(option: SelectOption): void {
     this.optionChangeEvent.emit(option);
     this.close();
   }

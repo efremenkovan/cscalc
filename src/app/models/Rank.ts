@@ -5,5 +5,6 @@ export interface Rank {
   };
   name: string;
   id: number;
-  image: string;
+  matchMakingImage: string;
+  wingmanImage: string;
 }

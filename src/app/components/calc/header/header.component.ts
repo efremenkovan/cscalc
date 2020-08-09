@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HeaderTab } from '../../../models/HeaderTab';
 import { CalcState } from '../../../models/CalcStates';
+import { CalcService } from '../../../services/calc.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,22 @@ import { CalcState } from '../../../models/CalcStates';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() options: HeaderTab[] = [];
-  @Input() activeOption: CalcState = CalcState.MatchMaking;
-
-  @Output() selectTypeEvent = new EventEmitter<CalcState>();
-
-  public selectType(type: CalcState): void {
-    this.selectTypeEvent.emit(type);
+  public get options(): HeaderTab[] {
+    return this.calcService.headerTabs;
   }
 
-  constructor() { }
+  public get activeOption(): CalcState {
+    return this.calcService.type;
+  }
+
+  public selectType(type: CalcState): void {
+    this.calcService.setType(type);
+  }
+
+  constructor(
+    private calcService: CalcService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
   }

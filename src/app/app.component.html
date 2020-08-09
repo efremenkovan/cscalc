@@ -1,3 +1,13 @@
 <section class="calc-wrapper">
+  <div class="togglers">
+    <button
+      (click)="modeChangeHandler('native')"
+      [class.active]="mode === 'native'"
+    >Boost Matchmaking</button>
+    <button
+      (click)="modeChangeHandler('faceIt')"
+      [class.active]="mode === 'faceIt'"
+    >Boost Faceit</button>
+  </div>
   <app-calc></app-calc>
 </section>

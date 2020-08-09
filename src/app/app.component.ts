@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CalcService } from './services/calc.service';
+import { CalcMode } from './models/CalcModes';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  public modeChangeHandler(type: string): void {
+    this.calcService.setMode(type as CalcMode);
+  }
+
+  public get mode(): CalcMode {
+    return this.calcService.mode;
+  }
+
+  constructor(private calcService: CalcService) {}
 }

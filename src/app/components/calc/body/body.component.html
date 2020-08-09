@@ -1,16 +1,25 @@
  <div class="calc__body__main">
     <div class="calc__body__column">
       <img
-        [src]="(fromRank && fromRank.image) || './assets/ranks/default.webp'"
+        [src]="fromImage"
         [alt]="(fromRank && fromRank.name) || 'Unranked'"
         class="calc__body__column__image"
       >
       <app-select
-        [options]="rankOptions"
+        *ngIf="isSelectVisible; else FromInput"
+        [options]="fromRankOptions"
         [selectedOption]="fromRank"
         [placeholder]="'Нынешнее звание'"
         (optionChangeEvent)="fromRankChangeHandler($event)"
       ></app-select>
+     <ng-template #FromInput>
+       <input
+         class="calc__body__column__input"
+         type="number"
+         [value]="fromRank || ''"
+         (input)="setFromValue($event)"
+       >
+     </ng-template>
     </div>
     <img
       src="./assets/separator.svg"
@@ -19,13 +28,22 @@
     />
     <div class="calc__body__column">
       <app-select
-        [options]="rankOptions"
+        *ngIf="isSelectVisible; else ToInput"
+        [options]="toRankOptions"
         [selectedOption]="toRank"
         [placeholder]="'Желаемое звание'"
         (optionChangeEvent)="toRankChangeHandler($event)"
       ></app-select>
+      <ng-template #ToInput>
+        <input
+          class="calc__body__column__input"
+          type="number"
+          [value]="toRank || ''"
+          (input)="setToValue($event)"
+        />
+      </ng-template>
         <img
-          [src]="(toRank && toRank.image) || './assets/ranks/default.webp'"
+          [src]="toImage"
           [alt]="(toRank && toRank.name) || 'Unranked'"
           class="calc__body__column__image"
         />
