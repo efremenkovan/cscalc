@@ -16,5 +16,9 @@ export class AppComponent {
     return this.calcService.mode;
   }
 
+  public get isOpen(): boolean {
+    return this.calcService.isOpen;
+  }
+
   constructor(private calcService: CalcService) {}
 }

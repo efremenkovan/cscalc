@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-  --background-color: #1d1d1f;
+  --background-color: #1a1a1c;
+  --boost-card-background-color: #1c1c1c;
+  --boost-card-box-shadow: 0px 0px 60px 0px rgba(42,5,51,0.1);
+  --boost-card-color: #414141;
   --card-background: #1e1e20;
   --card-shadow: rgba(0, 0, 0, 0.45) 0px 7px 60px;
   --container-width: 1170px;
@@ -57,29 +60,6 @@ $iconSize: 22px;
   justify-content: center;
   align-items: center;
   padding: ($vSpacing * 3) 0;
-
-  .togglers {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: ($vSpacing * 3);
-
-    button {
-      color: white;
-      background: var(--select-background-color);
-      padding: ($vSpacing) ($hSpacing * 3);
-      border-radius: 4px;
-
-      &.active {
-        background-color: var(--active-color);
-      }
-
-      &:first-child {
-        margin-right: ($vSpacing);
-      }
-    }
-  }
 }
 
 app-calc {
@@ -89,9 +69,21 @@ app-calc {
   flex-direction: column;
   margin: 0 auto;
   background-color: var(--card-background);
-  box-shadow: var(--card-shadow);
   color: var(--card-text-color);
-  padding: ($vSpacing * 3) ($hSpacing * 4);
+  padding: 0;
+
+  max-height: 0;
+  transition: 0.6s max-height ease-in-out,
+              0.3s padding-top ease-in-out,
+              0.3s padding-bottom ease-in-out,
+              0.3s box-shadow ease-in-out;
+  overflow: hidden;
+
+  &.open {
+    max-height: 1000px;
+    box-shadow: var(--card-shadow);
+    padding: ($vSpacing * 3) ($hSpacing * 4);
+  }
 }
 
 app-optional-service {
@@ -423,3 +415,126 @@ app-footer {
     }
   }
 }
+
+.calc-wrapper {
+  h2 {
+    font-size: 40px;
+    color: white;
+    margin-bottom: ($vSpacing * 10);
+  }
+  .togglers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: ($vSpacing * 13);
+    gap: ($vSpacing * 3.5);
+
+    button {
+      color: white;
+      background: var(--select-background-color);
+      padding: ($vSpacing) ($hSpacing * 3);
+      border-radius: 4px;
+
+      &.active {
+        background-color: var(--active-color);
+      }
+
+      &:first-child {
+        margin-right: ($vSpacing);
+      }
+    }
+  }
+
+  app-boost-button {
+    width: 50%;
+    max-width: 500px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    box-shadow: var(--boost-card-box-shadow);
+    background-color: var(--boost-card-background-color);
+
+    &:last-child{
+      .card__image-wrapper {
+        .card__image {
+          transform: translate(-149px, -78px);
+        }
+      }
+    }
+
+    .card__image-wrapper {
+      width: 100%;
+      position: relative;
+      height: 468px;
+
+      .card__image {
+        width: 810px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-position: center center;
+        transform: translate(-137px, -71px);
+        object-fit: fill;
+      }
+    }
+
+    .card__title {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      line-height: 1.55;
+      margin-bottom: $vSpacing;
+      width: 100%;
+      justify-content: center;
+
+      img {
+        width: ($hSpacing * 4);
+        transform: translateY(-$vSpacing);
+        margin-right: ($hSpacing * 0.5);
+      }
+    }
+
+    .card__body {
+      margin-top: (-$vSpacing*14);
+      padding: 0 ($hSpacing * 4) ($vSpacing * 5);
+    }
+
+    .card__description {
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 300;
+      margin-bottom: ($vSpacing * 4);
+    }
+
+    .card__button {
+      height: 60px;
+      border-radius: 30px;
+      background-color: black;
+      color: var(--boost-card-color);
+      width: 270px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .togglers {
+    flex-direction: column;
+
+    app-boost-button {
+      width: 90%;
+    }
+
+    & > app-boost-button:first-child {
+      margin-bottom: ($vSpacing * 5);
+    }
+  }
+}
+

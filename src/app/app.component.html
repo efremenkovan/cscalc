@@ -1,13 +1,23 @@
 <section class="calc-wrapper">
+  <h2>
+    Проверьте наши предложения по повышению
+  </h2>
+
   <div class="togglers">
-    <button
-      (click)="modeChangeHandler('native')"
-      [class.active]="mode === 'native'"
-    >Boost Matchmaking</button>
-    <button
-      (click)="modeChangeHandler('faceIt')"
-      [class.active]="mode === 'faceIt'"
-    >Boost Faceit</button>
+    <app-boost-button
+      title="CSGO Boosting"
+      description="CSGO Boosting предоставляется нашими элитными игроками по всему миру без использования читов и ботов. Это гарантирует 100% юридическое обслуживание в очень короткие сроки!"
+      image="https://static.tildacdn.com/tild3164-3730-4839-b232-323364623866/_-1.png"
+      (selectModeEvent)="modeChangeHandler('native')"
+      icon="https://static.tildacdn.com/tild3837-3134-4638-b262-373762363730/_s-1.png"
+    ></app-boost-button>
+    <app-boost-button
+      title="Faceit Boost"
+      description="Повышение Faceit обеспечивается нашими профессиональными игроками ( уровень 10/3000+ игроки elo/ FLP/ FLP-C ). В этом варианте мы можем повысить вам уровень FaceTo или Elo в популярной лиге Faceit."
+      image="https://static.tildacdn.com/tild3133-6262-4437-a666-333932323435/_s-1.png"
+      (selectModeEvent)="modeChangeHandler('faceIt')"
+      icon="https://static.tildacdn.com/tild6363-3963-4139-a162-343465646563/_f-1.png"
+    ></app-boost-button>
   </div>
-  <app-calc></app-calc>
+  <app-calc [class.open]="isOpen"></app-calc>
 </section>

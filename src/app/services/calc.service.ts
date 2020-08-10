@@ -27,6 +27,8 @@ export class CalcService {
     native: HeaderTab[],
     faceIt: HeaderTab[],
   } = headerTabs;
+  private _isOpen: boolean = false;
+
   private readonly _rankOptions: Rank[] = ranks;
   private readonly _faceItRankOptions: FaceItRank[] = faceItRanks;
   private readonly _faceItEloRanges: FaceItEloRange[] = faceItEloRanges;
@@ -162,6 +164,10 @@ export class CalcService {
     return this._type;
   }
 
+  public get isOpen(): boolean {
+    return this._isOpen;
+  }
+
   public get fromRankOptions(): Rank[] | FaceItRank[] {
     switch (this._type) {
       case CalcState.FaceItGames:
@@ -246,6 +252,7 @@ export class CalcService {
     this._mode = mode;
     if (this._mode === CalcMode.Native) this._type = CalcState.MatchMaking;
     if (this._mode === CalcMode.FaceIt) this._type = CalcState.FaceItElo;
+    if (!this._isOpen) this._isOpen = true;
   }
 
   public submit(): void {

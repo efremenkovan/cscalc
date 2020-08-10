@@ -8,6 +8,7 @@ import { BodyComponent } from './components/calc/body/body.component';
 import { FooterComponent } from './components/calc/footer/footer.component';
 import { SelectComponent } from './components/calc/body/select/select.component';
 import { OptionComponent } from './components/calc/body/option/option.component';
+import { BoostButtonComponent } from './components/boost-button/boost-button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OptionComponent } from './components/calc/body/option/option.component'
     BodyComponent,
     FooterComponent,
     SelectComponent,
-    OptionComponent
+    OptionComponent,
+    BoostButtonComponent
   ],
   imports: [
     BrowserModule

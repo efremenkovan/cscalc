@@ -1,0 +1,15 @@
+<div class="card__image-wrapper">
+  <img [src]="image" [alt]="title" class="card__image">
+</div>
+<div class="card__body">
+  <h4 class="card__title">
+    <img [src]="icon" alt="icon">
+    <span>{{title}}</span>
+  </h4>
+  <p class="card__description">
+    {{description}}
+  </p>
+  <button class="card__button" (click)="clickHandler()">
+    {{title}}
+  </button>
+</div>
