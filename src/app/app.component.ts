@@ -9,7 +9,29 @@ import { CalcMode } from './models/CalcModes';
 })
 export class AppComponent {
   public modeChangeHandler(type: string): void {
+    // document.body.style.scrollBehavior = 'smooth';
+    // const animationStart = new Date().getTime();
+    // window.requestAnimationFrame(() => this.scrollToWrapper(animationStart));
+    const calcWrapper = document.querySelector('app-calc');
     this.calcService.setMode(type as CalcMode);
+    setTimeout(() => calcWrapper.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth',
+    }), 0);
+  }
+
+  private scrollToWrapper(start: number): void {
+    const calcWrapper = document.querySelector('app-calc');
+    calcWrapper.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth',
+    });
+    console.log(calcWrapper.getBoundingClientRect());
+    if (new Date().getTime() - start < 400) {
+      window.requestAnimationFrame(() => this.scrollToWrapper(start));
+    } else {
+      document.body.style.scrollBehavior = '';
+    }
   }
 
   public get mode(): CalcMode {

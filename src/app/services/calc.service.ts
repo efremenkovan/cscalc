@@ -115,7 +115,6 @@ export class CalcService {
       } else if (this._type === CalcState.FaceItElo) {
         this._fromRank = this._fromRank as number;
         this._toRank = this._toRank as number;
-
         for (const range of this._faceItEloRanges) {
           // Range is too low on ELO.
           if (range.to < this._fromRank) continue;
@@ -135,8 +134,8 @@ export class CalcService {
           }
 
           // Comes from another range and ends there
-          if (this._fromRank < range.from && this._toRank >= range.from && this._toRank <= range.to) {
-            total +=  (range.from + this._toRank) * range.value;
+          if (this._fromRank < range.from && this._toRank <= range.to) {
+            total += (this._toRank - range.from) * range.value;
             break;
           }
 

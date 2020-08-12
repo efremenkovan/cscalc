@@ -9,13 +9,14 @@
         *ngIf="isSelectVisible; else FromInput"
         [options]="fromRankOptions"
         [selectedOption]="fromRank"
-        [placeholder]="'Нынешнее звание'"
+        [placeholder]="'Текущее звание'"
         (optionChangeEvent)="fromRankChangeHandler($event)"
       ></app-select>
      <ng-template #FromInput>
        <input
          class="calc__body__column__input"
          type="number"
+         placeholder="Текущий рейтинг"
          [value]="fromRank || ''"
          (input)="setFromValue($event)"
        >
@@ -38,6 +39,7 @@
         <input
           class="calc__body__column__input"
           type="number"
+          placeholder="Желаемый рейтинг"
           [value]="toRank || ''"
           (input)="setToValue($event)"
         />

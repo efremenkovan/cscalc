@@ -45,6 +45,7 @@ $vSpacing: 10px;
 $desktopBreakpoint: 1200px;
 $mobileBreakpoint: 660px;
 $iconSize: 22px;
+$cardBreakPoint: 1250px;
 
 *, *::before, *::after {
   margin: 0;
@@ -73,10 +74,10 @@ app-calc {
   padding: 0;
 
   max-height: 0;
-  transition: 0.6s max-height ease-in-out,
-              0.3s padding-top ease-in-out,
-              0.3s padding-bottom ease-in-out,
-              0.3s box-shadow ease-in-out;
+  transition: 0.3s max-height ease-in-out,
+              0.2s padding-top ease-in-out,
+              0.2s padding-bottom ease-in-out,
+              0.2s box-shadow ease-in-out;
   overflow: hidden;
 
   &.open {
@@ -246,12 +247,18 @@ app-header {
   align-items: baseline;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: ($vSpacing * 2);
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none
+  }
 
   .calc__header {
     &__type {
       padding: ($vSpacing) ($hSpacing * 2);
       color: var(--card-text-color);
       font-size: 16px;
+      white-space: nowrap;
 
       &.active {
         color: var(--active-color);
@@ -329,6 +336,7 @@ app-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   .calc__footer {
     &__price {
@@ -384,11 +392,14 @@ app-footer {
 
 @media (max-width: $mobileBreakpoint) {
   app-optional-service:nth-child(1n){
-    margin-right: 0px;
+    margin-right: 0;
     display: flex;
     justify-content: center;
     width: 100%;
+  }
 
+  .calc-wrapper .calc-wrapper__header {
+    font-size: 32px;
   }
 
   app-body {
@@ -417,10 +428,15 @@ app-footer {
 }
 
 .calc-wrapper {
-  h2 {
+  overflow-x: hidden;
+  padding-bottom: 100vh;
+
+  &__header {
     font-size: 40px;
+    line-height: 1.54;
     color: white;
     margin-bottom: ($vSpacing * 10);
+    text-align: center
   }
   .togglers {
     width: 100%;
@@ -473,6 +489,7 @@ app-footer {
       height: 468px;
 
       .card__image {
+        max-width: 162%;
         width: 810px;
         position: absolute;
         left: 0;
@@ -524,7 +541,7 @@ app-footer {
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: $cardBreakPoint) {
   .togglers {
     flex-direction: column;
 
@@ -538,3 +555,22 @@ app-footer {
   }
 }
 
+@media (max-width: 555px) {
+  .calc-wrapper app-boost-button .card__image-wrapper .card__image {
+    max-width: 162%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-position: center center;
+    transform: translate(calc(-137 / 810 * 100%), calc(-71 / 470 * 100%));
+    object-fit: fill;
+  }
+
+  .calc-wrapper app-boost-button:last-child .card__image-wrapper .card__image {
+    transform: translate(calc(-149 / 810 * 100%), calc(-78 / 470 * 100%));
+  }
+
+  .calc-wrapper app-boost-button .card__body {
+    margin-top: -24vh;
+  }
+}
