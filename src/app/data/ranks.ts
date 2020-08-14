@@ -9,8 +9,8 @@ export const ranks: Rank[] = [
       matchMaking: 0,
       wingman: 0,
     },
-    matchMakingImage: '/assets/ranks/silver-1.jpg',
-    wingmanImage: '/assets/wingman/silver-1.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-1.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-1.webp',
   },
   {
     id: 1,
@@ -19,8 +19,8 @@ export const ranks: Rank[] = [
       matchMaking: 165,
       wingman: 120,
     },
-    matchMakingImage: '/assets/ranks/silver-2.jpg',
-    wingmanImage: '/assets/wingman/silver-2.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-2.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-2.webp',
   },
   {
     id: 2,
@@ -29,8 +29,8 @@ export const ranks: Rank[] = [
       matchMaking: 165,
       wingman: 120,
     },
-    matchMakingImage: '/assets/ranks/silver-3.jpg',
-    wingmanImage: '/assets/wingman/silver-3.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-3.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-3.png',
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ export const ranks: Rank[] = [
       matchMaking: 165,
       wingman: 120,
     },
-    matchMakingImage: '/assets/ranks/silver-4.jpg',
-    wingmanImage: '/assets/wingman/silver-4.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-4.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-4.webp',
   },
   {
     id: 4,
@@ -49,8 +49,8 @@ export const ranks: Rank[] = [
       matchMaking: 165,
       wingman: 120,
     },
-    matchMakingImage: '/assets/ranks/silver-5.jpg',
-    wingmanImage: '/assets/wingman/silver-5.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-5.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-5.png',
   },
   {
     id: 5,
@@ -59,8 +59,8 @@ export const ranks: Rank[] = [
       matchMaking: 165,
       wingman: 120,
     },
-    matchMakingImage: '/assets/ranks/silver-6.jpg',
-    wingmanImage: '/assets/wingman/silver-6.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/silver-6.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/silver-6.webp',
   },
   {
     id: 6,
@@ -69,8 +69,8 @@ export const ranks: Rank[] = [
       matchMaking: 256,
       wingman: 190,
     },
-    matchMakingImage: '/assets/ranks/gn-1.jpg',
-    wingmanImage: '/assets/wingman/gn-1.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/gn-1.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/gn-1.webp',
   },
   {
     id: 7,
@@ -79,8 +79,8 @@ export const ranks: Rank[] = [
       matchMaking: 256,
       wingman: 190,
     },
-    matchMakingImage: '/assets/ranks/gn-2.jpg',
-    wingmanImage: '/assets/wingman/gn-2.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/gn-2.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/gn-2.webp',
   },
   {
     id: 8,
@@ -89,8 +89,8 @@ export const ranks: Rank[] = [
       matchMaking: 256,
       wingman: 190,
     },
-    matchMakingImage: '/assets/ranks/gn-3.jpg',
-    wingmanImage: '/assets/wingman/gn-3.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/gn-3.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/gn-3.png',
   },
   {
     id: 9,
@@ -99,8 +99,8 @@ export const ranks: Rank[] = [
       matchMaking: 256,
       wingman: 190,
     },
-    matchMakingImage: '/assets/ranks/gn-4.jpg',
-    wingmanImage: '/assets/wingman/gn-4.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/gn-4.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/gn-4.webp',
   },
   {
     id: 10,
@@ -109,8 +109,8 @@ export const ranks: Rank[] = [
       matchMaking: 332,
       wingman: 247,
     },
-    matchMakingImage: '/assets/ranks/ak-1.jpg',
-    wingmanImage: '/assets/wingman/ak-1.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/ak-1.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/ak-1.png',
   },
   {
     id: 11,
@@ -119,8 +119,8 @@ export const ranks: Rank[] = [
       matchMaking: 332,
       wingman: 247,
     },
-    matchMakingImage: '/assets/ranks/ak-2.jpg',
-    wingmanImage: '/assets/ranks/ak-2.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/ak-2.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/ranks/ak-2.png',
   },
   {
     id: 12,
@@ -129,8 +129,8 @@ export const ranks: Rank[] = [
       matchMaking: 332,
       wingman: 247,
     },
-    matchMakingImage: '/assets/ranks/ak-3.jpg',
-    wingmanImage: '/assets/wingman/ak-3.png',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/ak-3.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/ak-3.png',
   },
   {
     id: 13,
@@ -139,8 +139,8 @@ export const ranks: Rank[] = [
       matchMaking: 428,
       wingman: 318,
     },
-    matchMakingImage: '/assets/ranks/bs.jpg',
-    wingmanImage: '/assets/wingman/bs.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/bs.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/bs.webp',
   },
   {
     id: 14,
@@ -149,8 +149,8 @@ export const ranks: Rank[] = [
       matchMaking: 617,
       wingman: 460,
     },
-    matchMakingImage: '/assets/ranks/le.jpg',
-    wingmanImage: '/assets/wingman/le.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/le.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/le.webp',
   },
   {
     id: 15,
@@ -159,8 +159,8 @@ export const ranks: Rank[] = [
       matchMaking: 807,
       wingman: 603,
     },
-    matchMakingImage: '/assets/ranks/lem.jpg',
-    wingmanImage: '/assets/wingman/lem.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/lem.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/lem.webp',
   },
   {
     id: 16,
@@ -169,8 +169,8 @@ export const ranks: Rank[] = [
       matchMaking: 1206,
       wingman: 902,
     },
-    matchMakingImage: '/assets/ranks/sup.jpg',
-    wingmanImage: '/assets/wingman/sup.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/sup.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/sup.webp',
   },
   {
     id: 17,
@@ -179,8 +179,8 @@ export const ranks: Rank[] = [
       matchMaking: 1700,
       wingman: 1273,
     },
-    matchMakingImage: '/assets/ranks/glob.jpg',
-    wingmanImage: '/assets/wingman/glob.webp',
+    matchMakingImage: 'https://n30np14gu3.github.io/assets/ranks/glob.jpg',
+    wingmanImage: 'https://n30np14gu3.github.io/assets/wingman/glob.webp',
   },
 ];
 
@@ -188,7 +188,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 0,
     name: '1 Уровень',
-    image: '/assets/faceIt/ELO_1.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_1.webp',
     value: 116,
     from: 0,
     to: 800,
@@ -196,7 +196,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 1,
     name: '2 Уровень',
-    image: '/assets/faceIt/ELO_2.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_2.webp',
     value: 116,
     from: 801,
     to: 950,
@@ -204,7 +204,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 2,
     name: '3 Уровень',
-    image: '/assets/faceIt/ELO_3.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_3.webp',
     value: 163,
     from: 951,
     to: 1100,
@@ -212,7 +212,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 3,
     name: '4 Уровень',
-    image: '/assets/faceIt/ELO_4.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_4.webp',
     value: 163,
     from: 1101,
     to: 1250,
@@ -220,7 +220,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 4,
     name: '5 Уровень',
-    image: '/assets/faceIt/ELO_5.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_5.webp',
     value: 163,
     from: 1251,
     to: 1400,
@@ -228,7 +228,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 5,
     name: '6 Уровень',
-    image: '/assets/faceIt/ELO_6.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_6.webp',
     value: 163,
     from: 1401,
     to: 1550,
@@ -236,7 +236,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 6,
     name: '7 Уровень',
-    image: '/assets/faceIt/ELO_7.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_7.webp',
     value: 235,
     from: 1551,
     to: 1700,
@@ -244,7 +244,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 7,
     name: '8 Уровень',
-    image: '/assets/faceIt/ELO_8.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_8.webp',
     value: 235,
     from: 1701,
     to: 1850,
@@ -252,7 +252,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 8,
     name: '9 Уровень',
-    image: '/assets/faceIt/ELO_9.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_9.webp',
     value: 235,
     from: 1851,
     to: 2000,
@@ -260,7 +260,7 @@ export const faceItRanks: FaceItRank[] = [
   {
     id: 9,
     name: '10 Уровень',
-    image: '/assets/faceIt/ELO_10.webp',
+    image: 'https://n30np14gu3.github.io/assets/faceIt/ELO_10.webp',
     from: 2001,
     to: 4100,
     value: null
